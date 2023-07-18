@@ -15,28 +15,11 @@ export default async function createUser(email: string, username: string, passwo
             }
         }) 
 
+        console.log(data)
+        console.log(error)
+
         if(error) {
             throw error
-        }
-
-        if (data.user) {
-            const {user} = data;
-
-            const { error: insertError } = await supabase
-                .from('profiles')
-                .insert({
-                    id: user.id,  // user id from the auth.users table
-                    username: username,
-                    email: email,
-                });
-    
-            // Error handling for profile insert
-            if (insertError) {
-                console.error('Error inserting profile:', insertError);
-                return;
-            }
-    
-            console.log('User signed up and profile created:', user);
         }
     } catch(e) {
         console.log(e)
