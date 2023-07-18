@@ -2,6 +2,7 @@
 
 import UserInput from "@/components/UserInput";
 import createUser from "@/lib/createUser";
+import Link from "next/link";
 import { useState } from "react";
 
 export default function CreateAccount() {
@@ -35,7 +36,14 @@ export default function CreateAccount() {
                     <UserInput title="Email" value={email} placeholder="John.Doe@gmail.com" onChange={handleEmail} />
                     <UserInput title="Username" value={username} placeholder="John123" onChange={handleUsername} />
                     <UserInput title="Password" value={password} hidden={true} onChange={handlePassword} />
-                    <button className="bg-blue-400 rounded-md px-[10px] py-[15px] text-white font-medium tracking-wide mt-[10px]">Sign Up</button>
+                    <button className="bg-blue-400 rounded-md px-[10px] py-[15px] text-white font-medium tracking-wide mt-[10px]">
+                        Sign Up
+                    </button>
+                    <Link href="/">
+                        <button className="w-full bg-gray-400 rounded-md px-[10px] py-[15px] text-white font-medium tracking-wide mt-[10px]">
+                            Return To Home Page
+                        </button>
+                    </Link>
                 </div>
             </form>
         </div>

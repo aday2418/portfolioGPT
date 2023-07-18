@@ -1,4 +1,5 @@
 export default function UserInput({ title, value, onChange, placeholder="", hidden=false}: {title: string, value:string, onChange: (value: string) => void, placeholder?:string, hidden?: boolean}) {
+    
     const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
         onChange(e.target.value)
     }
