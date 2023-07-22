@@ -1,3 +1,8 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+.smoothe {
+    transition-property: all;
+    transition-duration: 200ms;
+}
