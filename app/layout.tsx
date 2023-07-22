@@ -13,7 +13,7 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body className="relative w-screen h-full min-h-screen">
+      <body className="relative w-screen h-full min-h-screen bg-blue-400">
         {children}
       </body>
     </html>

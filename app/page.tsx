@@ -3,7 +3,7 @@ import AuthForm from "./AuthForm";
 
 export default function Home() {
   return (
-    <div className="relative w-full h-screen bg-blue-400">
+    <div className="relative w-full h-screen">
       <div className="relative w-full h-[75px] flex items-center justify-end px-[30px] gap-4">
         <Link href="/login">
           <button className="bg-white text-gray-900 font-medium px-[15px] py-[10px] rounded-xl shadow-sm hover:shadow">

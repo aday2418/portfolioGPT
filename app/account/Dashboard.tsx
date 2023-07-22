@@ -37,13 +37,8 @@ export default function Dashboard({ session }: { session: Session | null }) {
   }, [user, getProfile])
 
   return (
-    <div className="">
-      <div>
-        <form action="/auth/signout" method="post">
-          <button className="" type="submit">
-            Sign out
-          </button>
-        </form>
+    <div className="w-full h-screen flex justify-center items-center">
+      <div className='relative w-[500px] h-fit min-h-[500px] bg-white rounded-xl shadow flex flex-col py-[25px] gap-8'>
       </div>
     </div>
   )
