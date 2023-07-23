@@ -5,9 +5,13 @@ import { Session, createClientComponentClient, createServerComponentClient } fro
 import Chatbot from '@/components/Chatbot'
 import Error from 'next/error'
 import uploadResume from '@/lib/uploadResume'
+import CurrentInfo from '@/components/CurrentInfo'
+import { useRouter } from 'next/navigation'
 
-export default function Dashboard({ session }: { session: Session | null }) {
+export default function Dashboard({ session, profile }: { session: Session | null, profile: any }) {
+  const {info} = profile
   const [resumeInfo, setResumeInfo] = useState<string>('')
+  const router = useRouter()
 
   const handleResumeChange = (e: ChangeEvent<HTMLTextAreaElement>) => {
     setResumeInfo(e.target.value)
@@ -21,6 +25,7 @@ export default function Dashboard({ session }: { session: Session | null }) {
 
       console.log(data, error)
       if(!error){
+        router.refresh()
         setResumeInfo('')
       }
     }catch(e: any){
@@ -28,6 +33,8 @@ export default function Dashboard({ session }: { session: Session | null }) {
     }
     
   }
+
+  console.log(info)
  
   return (
     <div className="w-full h-screen flex justify-center items-center">
@@ -40,9 +47,15 @@ export default function Dashboard({ session }: { session: Session | null }) {
             Submit
           </button>
         </form>
-        <div className='relative flex flex-col gap-2 w-full py-[10px]'>
-          <h1>Chatbot Preview</h1>
-            <Chatbot/>
+        <div className='relative flex gap-4 w-full'>
+          <div className='relative flex flex-col gap-2 w-full py-[10px]'>
+            <h1 className='text-center'>Chatbot Preview</h1>
+              <Chatbot/>
+          </div>
+          <div className='relative flex flex-col gap-2 w-full py-[10px]'>
+            <h1 className='text-center'>Submitted Information</h1>
+              <CurrentInfo currentInfo={info}/>
+          </div>
         </div>
       </div>
     </div>

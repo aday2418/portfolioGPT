@@ -10,5 +10,8 @@ export default async function Account() {
     data: { session },
   } = await supabase.auth.getSession()
 
-  return <Dashboard session={session} />
+  const {data: profiles} = await supabase.from('profiles').select()
+
+
+  return <Dashboard session={session} profile={profiles?.[0]}/>
 }
