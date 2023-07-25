@@ -7,12 +7,12 @@ const openai = new OpenAIApi(configuration);
 
 
 
-export default async function callChatGpt(message: string, question: string){
+export default async function callChatGpt(resInfo: string, question: string){
     const completion = await openai.createChatCompletion({
         model: "gpt-3.5-turbo",
         messages: [
             {"role": "system", "content": "You are a helpful chatbot that delivers confident answers about people's resumes. You only give answers, not cautions or warnings."}, 
-            {"role": "user", "content": message},
+            {"role": "user", "content": resInfo},
             {"role": "user", "content": question}
         ],
       });
