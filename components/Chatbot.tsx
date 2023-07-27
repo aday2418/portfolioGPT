@@ -21,13 +21,14 @@ export default function Chatbot(){
     const sendMessage = async (e: React.FormEvent<HTMLFormElement>) => {
         e.preventDefault()
 
-        addMessageToHistory('user', currentMessage)
         const tempMessage = currentMessage
+        const adjustedHistory = messageHistory.concat({sender: "user", message: tempMessage})
+        addMessageToHistory('user', currentMessage)
         setCurrentMessage('')
 
         try{
             setLoading(true)
-            const response = await callChatbot(tempMessage)
+            const response = await callChatbot(adjustedHistory)
             addMessageToHistory('bot', response)
         }catch(e: any){
             alert(e.message)

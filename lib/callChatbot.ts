@@ -1,15 +1,16 @@
 import { createClientComponentClient } from "@supabase/auth-helpers-nextjs"
 import { Database } from '../database.types'
+import { MessageType } from "@/types/MessageType"
 
-export default async function callChatbot(message: string){
+export default async function callChatbot(messageHistory: MessageType[]){
     const res = await fetch('/api/ask', {
         method: 'POST',
         headers: {
             'Content-Type': 'application/json' 
         },
-        body: JSON.stringify({ message })
+        body: JSON.stringify({ messageHistory })
     })
     const response = await res.json()
-    
+
     return response.data
 }

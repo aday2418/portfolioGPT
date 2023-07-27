@@ -4,9 +4,9 @@ import { createRouteHandlerClient } from "@supabase/auth-helpers-nextjs";
 import { NextRequest, NextResponse } from "next/server";
 
 export async function POST(req: NextRequest){
-    const { message } = await req.json()
+    const { messageHistory } = await req.json()
     const user = await routeUser() 
-    const data = await callChatGpt(user.info, message)
+    const data = await callChatGpt(user.info, messageHistory)
     
     return NextResponse.json({data})
 }
