@@ -36,7 +36,6 @@ export default function Chatbot(){
             setLoading(false)
         }
     }
-    console.log(loading)
     
     return(
         <div className="relative w-[600px] bg-gray-200 rounded-md ">
