@@ -1,5 +1,3 @@
-import Link from "next/link";
-import AuthForm from "./AuthForm";
 import Header from "@/components/Header";
 import Chatbot from "@/components/Chatbot";
 import Scroll from "@/components/Scroll";
@@ -37,15 +35,12 @@ export default function Home() {
           <Table color={1} title="Starter" price="Free">
             <Detail bulletPoint="200 messages /mo"/>
             <Detail bulletPoint="Resume size 600 words"/>
-
           </Table>
           <Table color={2} title="Pro" price="$4.99">
             <Detail bulletPoint="2,000 messages /mo"/>
             <Detail bulletPoint="Resume size 1,000 words"/>
             <Detail bulletPoint="Remove Chatfolio Branding"/>
             <Detail bulletPoint="Chatbot Personalities"/>
-
-
           </Table>
           <Table color={3} title="Enthusiast" price="$19.99">
             <Detail bulletPoint="10,000 messages /mo"/>

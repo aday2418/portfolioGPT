@@ -1,9 +1,11 @@
 'use client';
 
+import Chatbot from "@/components/Chatbot";
+
 export default function Page() {
     return (
         <div>
-            <script src="/chatbot"></script>
+            <Chatbot />           
         </div>
     )
 }
