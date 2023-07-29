@@ -8,13 +8,8 @@ export default function Header(){
             </div>
             <div className="relative flex gap-4">
                 <Link href="/login">
-                <button className="bg-white text-gray-900 font-medium px-[15px] py-[10px] rounded-xl shadow-sm hover:shadow">
+                <button className=" text-white font-medium px-[15px] py-[10px] text-lg tracking-wide rounded-xl border-2 border-transparent hover:border-white hover:shadow-md smoothe">
                     Login
-                </button>
-                </Link>
-                <Link href="/createAccount">
-                <button className="border-2 border-white shadow text-white font-medium px-[15px] py-[10px] rounded-xl hover:shadow">
-                    Sign Up
                 </button>
                 </Link>
             </div>

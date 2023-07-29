@@ -5,8 +5,9 @@ import ChatHistory from "./ChatHistory";
 import callChatbot from "@/lib/callChatbot";
 import { MessageType } from "@/types/MessageType";
 
-export default function Chatbot(){
-    const [messageHistory, setMessageHistory] = useState<MessageType[]>([])
+export default function Chatbot({defaultMessage = null, landingPage = false}: {defaultMessage?: string | null, landingPage?: boolean}){
+    const defaultVal = defaultMessage ? [{sender: "bot", message: defaultMessage}] : []
+    const [messageHistory, setMessageHistory] = useState<MessageType[]>(defaultVal)
     const [currentMessage, setCurrentMessage] = useState<string>('')
     const [loading, setLoading] = useState<boolean>(false)
 
@@ -28,7 +29,7 @@ export default function Chatbot(){
 
         try{
             setLoading(true)
-            const response = await callChatbot(adjustedHistory)
+            const response = await callChatbot(adjustedHistory, landingPage)
             addMessageToHistory('bot', response)
         }catch(e: any){
             alert(e.message)

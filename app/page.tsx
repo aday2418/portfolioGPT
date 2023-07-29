@@ -1,18 +1,30 @@
 import Link from "next/link";
 import AuthForm from "./AuthForm";
 import Header from "@/components/Header";
+import Chatbot from "@/components/Chatbot";
 
 export default function Home() {
+  const landingPageMessage = "Welcome to Chatfolio! Ask me any questions you may have about the site."
+
   return (
     <div className="relative w-full h-screen flex flex-col bg-blue-600">
       <Header/>
       <div className="relative flex">
-        <div className="relative flex flex-col items-center w-[800px] pt-[150px] gap-4">
-          <h1 className="text-white text-6xl text-center font-semibold tracking-wide max-w-[600px] leading-[1.1]">Upgrade Your Portfolio Site</h1>
+        <div className="relative flex flex-col items-center w-[800px] pt-[150px] gap-4 ml-[100px]">
+          <h1 className="text-white text-6xl text-center font-semibold tracking-wide max-w-[600px] leading-[1.1] ">Upgrade Your Portfolio Site</h1>
           <h1 className="text-white text-2xl text-center max-w-[400px] tracking-wide font-medium">
             Chatfolio gives you a personalized chatbot for your portfolio website.
           </h1>
+          <button className="text-xl text-white bg-orange-500 rounded-lg tracking-widest mt-[20px] px-[40px] py-[10px] font-semibold border-2 border-transparent hover:bg-orange-600 hover:shadow-lg smoothe">Get Started</button>
         </div>
+        <div className="relative w-full flex pt-[90px] justify-center ">
+          <div className="relative shadow-xl shadow-black/30 hover:shadow-black/50 smoothe hover:shadow-2xl border-2 border-white rounded-lg">
+            <Chatbot defaultMessage={landingPageMessage} landingPage={true}/>
+          </div>
+        </div>
+      </div>
+      <div className="absolute w-full flex justify-center bottom-5">
+        <h1 className="w-fit text-lg text-white font-semibold tracking-wide">↓ Scroll For More</h1>
       </div>
     </div>
   )

@@ -12,7 +12,7 @@ enum ChatCompletionRequestMessageRoleEnum {
   System = 'system',
 }
 
-export default async function callChatGpt(resInfo: string, messageHistory: MessageType[]){
+export default async function callChatGpt(info: string, messageHistory: MessageType[], landingPage: boolean = false){
     const structuredHistory = messageHistory.map(message => {
       const { message: content, sender } = message 
       const role = sender == "bot" ? ChatCompletionRequestMessageRoleEnum.Assistant : ChatCompletionRequestMessageRoleEnum.User
@@ -22,11 +22,13 @@ export default async function callChatGpt(resInfo: string, messageHistory: Messa
       }
     })
 
+    const systemMessage = landingPage ? "You are a helpful chatbot that delivers confident answers about chatfolio, a site that offers users a personalized chatbot for their portfolio website. Your answers are no longer than two sentences." : "You are a helpful chatbot that delivers confident answers about people's resumes. You only give answers, not cautions or warnings."
+
     const completion = await openai.createChatCompletion({
         model: "gpt-3.5-turbo",
         messages: [
-            {"role": "system", "content": "You are a helpful chatbot that delivers confident answers about people's resumes. You only give answers, not cautions or warnings."}, 
-            {"role": "user", "content": resInfo},
+            {"role": "system", "content": systemMessage}, 
+            {"role": "user", "content": info},
             ...structuredHistory
         ],
       });
