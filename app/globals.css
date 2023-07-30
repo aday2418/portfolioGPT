@@ -7,3 +7,6 @@
     transition-duration: 200ms;
 }
 
+.sidebar-height {
+    height: calc(100vh - 60px)
+}

@@ -13,5 +13,5 @@ export default async function Account() {
   const {data: profiles} = await supabase.from('profiles').select()
 
 
-  return <Dashboard session={session} profile={profiles?.[0]}/>
+  return null //<Dashboard session={session} profile={profiles?.[0]}/>
 }
