@@ -1,19 +1,20 @@
 'use client'
 
 import UserInput from "@/components/UserInput";
+import googleLogin from "@/lib/googleLogin";
 import loginUser from "@/lib/loginUser";
 import Link from "next/link";
 import { useRouter } from "next/navigation";
-import { useState } from "react";
+import { ReactNode, useState } from "react";
 
 export default function Login() {
     const router = useRouter()
     const [email, setEmail] = useState<string>('')
     const [password, setPassword] = useState<string>('')
     
-    const handleLogin = async (e: SubmitEvent) => {
+    const handleLogin = async (e: React.FormEvent<HTMLFormElement>) => {
         e.preventDefault();
-        const session = await loginUser(email, password);
+        const session = await googleLogin();
 
         if(session) {
             router.push("/account") 
@@ -33,8 +34,8 @@ export default function Login() {
             <form onSubmit={handleLogin} className="relative w-[500px] h-fit bg-white rounded-xl shadow flex flex-col  items-center py-[25px] gap-8">
                 <h1 className="font-semibold text-2xl text-gray-800">Login</h1> 
                 <div className="w-full flex flex-col gap-4 px-[100px]">
-                    <UserInput title="Email Address" placeholder="John.Doe@gmail.com" onChange={handleEmail}/>
-                    <UserInput title="Password" hidden={true} onChange={handlePassword}/>
+                    <UserInput title="Email Address" value={email} placeholder="John.Doe@gmail.com" onChange={handleEmail}/>
+                    <UserInput title="Password" value={password} hidden={true} onChange={handlePassword}/>
                     <button className="bg-blue-400 rounded-md px-[10px] py-[15px] text-white font-medium tracking-wide">
                         Login
                     </button>
