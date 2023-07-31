@@ -4,7 +4,7 @@ import Script from "next/script"
 
 export default function Page() {
     return (
-        <div id="chatbot-container" className="w-screen h-screen relative flex justify-end items-end">
+        <div>
             <Script src="/chatbot"/>
         </div>
     )
