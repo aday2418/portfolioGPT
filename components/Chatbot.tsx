@@ -39,11 +39,11 @@ export default function Chatbot({defaultMessage = null, landingPage = false}: {d
     }
     
     return(
-        <div className="relative w-[600px] bg-gray-200 rounded-md ">
+        <div className="relative w-[400px] h-[575px] bg-black border border-gray-500 rounded-md flex flex-col gap-2">
             <ChatHistory messageHistory={messageHistory} loading={loading}/>
-            <form onSubmit={sendMessage} className="relative w-full gap-2 h-[50px] flex border border-gray-300 rounded-md overflow-hidden smoothe shadow-md hover:shadow-lg bg-white">
-                <input value={currentMessage} onChange={changeMessage} type='text' placeholder='Ask me anything...' className="w-full px-[10px] outline-none"/>
-                <button type='submit' className="h-full bg-blue-400  text-white font-medium tracking-wider px-[10px] hover:bg-blue-500 smoothe ">
+            <form onSubmit={sendMessage} className="relative w-full bg-black h-[50px] flex border border-gray-500 rounded-md overflow-hidden smoothe shadow-md hover:shadow-lg bg-white">
+                <input value={currentMessage} onChange={changeMessage} type='text' placeholder='Ask me anything...' className="w-full px-[10px] outline-none bg-black text-white"/>
+                <button type='submit' className="h-full bg-blue-400 text-white font-medium tracking-wider px-[10px] hover:bg-blue-500 smoothe ">
                     Submit
                 </button>
             </form>
