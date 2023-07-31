@@ -9,7 +9,7 @@ export default function Dashboard({ session, profile }: { session: Session | nul
     
 
     return(
-        <div className='relative w-full flex pt-[40px] gap-14'>
+        <div className='relative w-full flex pt-[20px] gap-14'>
             <div className='relative w-full flex flex-col gap-10'>
                 <SubmitResume/>
                 <CurrentInfo currentInfo={profile.info}/>

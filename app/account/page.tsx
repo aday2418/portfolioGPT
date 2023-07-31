@@ -18,5 +18,5 @@ export default async function Account() {
     <PageInfo title="Home"> 
       <Dashboard session={session} profile={profiles?.[0]}/>
     </PageInfo>
-  ) //<Dashboard session={session} profile={profiles?.[0]}/>
+  )
 }
