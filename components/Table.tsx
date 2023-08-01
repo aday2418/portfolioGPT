@@ -1,6 +1,14 @@
+'use client'
+
+import googleLogin from "@/lib/googleLogin";
 import { ReactNode } from "react"
 
 export default function Table({color, title, price, children}: {color: number, title: string, price: string, children: ReactNode}){
+    
+    const handleLogin = async () => {
+        await googleLogin();
+    }
+    
     let colorVal = 'bg-white'
     if(color == 1)
         colorVal = 'bg-gradient-to-r from-pink-600 to-purple-600'
@@ -19,9 +27,7 @@ export default function Table({color, title, price, children}: {color: number, t
             <div className="relative flex flex-col gap-2 w-full bg-gray-700 mt-[10px] p-[10px] rounded-lg ">
                 {children}
             </div>
-            <button className="absolute bottom-[45px] flex text-white rounded-xl px-[10px] py-[10px] font-semibold tracking-wide border-2 bg-red-500 border-transparent smoothe hover:border-white hover:shadow-xl hover:shadow-gray-900/60 shadow-lg shadow-gray-900/60">
-                Get Started
-            </button>
+            <button type="button" onClick={handleLogin} className="absolute bottom-[50px] text-white rounded-xl px-[10px] py-[10px] font-semibold tracking-wide border-2 bg-red-500 border-transparent smoothe hover:border-white hover:shadow-xl hover:shadow-gray-900/60 shadow-lg shadow-gray-900/60">Get Started</button>
         </div>
 
     )

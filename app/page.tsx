@@ -4,6 +4,7 @@ import Scroll from "@/components/Scroll";
 import Table from "@/components/Table";
 import Detail from "@/components/Detail";
 import Pricing from "@/components/Pricing";
+import MainPageButton from "@/components/MainPageButton";
 
 export default function Home() {
   const landingPageMessage = "Welcome to Chatfolio! Ask me any questions you may have about the site."
@@ -18,7 +19,7 @@ export default function Home() {
             <h1 className="text-white text-2xl text-center max-w-[400px] tracking-wide font-medium">
               Chatfolio gives you a personalized chatbot for your portfolio website.
             </h1>
-            <button className="text-xl text-white bg-orange-500 rounded-lg tracking-widest mt-[20px] px-[40px] py-[10px] font-semibold border-2 border-transparent hover:bg-orange-600 hover:shadow-lg smoothe">Get Started</button>
+            <MainPageButton/>
           </div>
           <div className="relative w-full flex pt-[90px] justify-center ">
             <div className="relative shadow-xl shadow-black/30 hover:shadow-black/50 smoothe hover:shadow-2xl border-2 border-white rounded-lg">

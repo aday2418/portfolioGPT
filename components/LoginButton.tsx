@@ -1,13 +1,10 @@
 'use client'
 
 import googleLogin from "@/lib/googleLogin";
-import { Database } from '../database.types'
-import { createClientComponentClient } from "@supabase/auth-helpers-nextjs";
 
 
 export default function LoginButton(){
 
-    const supabase = createClientComponentClient<Database>()
     
     const handleLogin = async () => {
         await googleLogin();
