@@ -9,7 +9,7 @@ export default function Sidebar({email}: {email: string}){
                 <Tab name="Chatbot" link="/account/chatbot"/>
                 <Tab name="API" link="/account/apiPage"/>
                 <Tab name="Plans" link="/account/plans"/>
-                <Tab name="Settings" link="/account/settings"/>
+                <Tab name="Feedback" link="/account/support"/>
             </div>
             <div>
                 <Profile email={email}/>
