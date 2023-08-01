@@ -9,11 +9,5 @@ export default async function getUserByApiKey(supabase: SupabaseClient, key: str
         )
     `).eq('key', key);
 
-    console.log(apiKeys?.[0]);
-
-    /* 
-    const apiKey = apiKeys?.[0];
-    const {data: profiles } = await supabase.from("profiles").select().eq("id", apiKey.user_id);
-    return(profiles?.[0]);
-    */
+    return apiKeys?.[0];
 }
