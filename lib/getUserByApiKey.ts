@@ -5,9 +5,14 @@ export default async function getUserByApiKey(supabase: SupabaseClient, key: str
         user_id (
             subscription_tier (
                 remove_branding
-            )
+            ),
+            info
         )
     `).eq('key', key);
+    const apiKey = apiKeys?.[0];
 
-    return apiKeys?.[0];
+    return {
+        removeBranding: apiKey?.user_id?.subscription_tier?.remove_branding,
+        info: apiKey?.user_id?.info
+    }
 }

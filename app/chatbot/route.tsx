@@ -11,9 +11,7 @@ export async function GET(req: NextRequest){
         const supabase = getSupabaseAdmin();
         const userInfo = await getUserByApiKey(supabase, key)
         
-        console.log(userInfo);
-
-        const chatbot = getChatbot(key, "starter");
+        const chatbot = getChatbot(key, userInfo);
         const res = new NextResponse(chatbot);
         res.headers.set('Content-Type', 'text/javascript');
 
