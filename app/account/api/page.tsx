@@ -11,8 +11,6 @@ export default async function Page(){
     const {data: apiKeys} = await supabase.from('api_keys').select()
     const primaryKey = apiKeys?.[0].key;
 
-    console.log(primaryKey)
-
     return(
         <PageInfo title="API"> 
             <div className="relative flex flex-col">

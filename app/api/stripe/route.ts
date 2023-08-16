@@ -25,7 +25,6 @@ export async function POST(req: NextRequest){
             } catch(e: any) {
                 return new NextResponse(`Recieved Event, but unable to process: ${e.message}`, { status: 400 });
             }
-        // ... handle other event types
         default:
             return new NextResponse('Unfamiliar Event', { status: 200})
   }

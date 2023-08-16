@@ -3,8 +3,9 @@
 import { usePathname } from "next/navigation";
 import Profile from "./Profile";
 import Tab from "./Tab";
+import { User } from "@supabase/supabase-js";
 
-export default function Sidebar({email}: {email: string}){
+export default function Sidebar({user}: {user: User}){
     const path = usePathname();
     const sections = path.split('/');
     const current = sections[2]
@@ -16,10 +17,9 @@ export default function Sidebar({email}: {email: string}){
                 <Tab name="Chatbot" link="/account/chatbot" selected={current == "chatbot"} />
                 <Tab name="API" link="/account/api" selected={current == "api"} />
                 <Tab name="Plans" link="/account/plans" selected={current == "plans"} />
-                <Tab name="Feedback" link="/account/feedback" selected={current == "feedback"} />
             </div>
             <div>
-                <Profile email={email}/>
+                <Profile user={user}/>
             </div>
         </div>
     )

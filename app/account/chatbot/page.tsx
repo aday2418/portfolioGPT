@@ -6,7 +6,10 @@ import Dashboard from "../Dashboard";
 
 export default async function Page(){
     const supabase = createServerComponentClient<Database>({ cookies })
-    const {data: profiles} = await supabase.from('profiles').select()
+    const {data: profiles} = await supabase.from('profiles').select(`
+        info,
+        subscription_tier(*)
+    `)
 
     const {
       data: { session },

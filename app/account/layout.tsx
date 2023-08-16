@@ -16,7 +16,7 @@ export default async function layout({children}: {children: React.ReactNode}){
         <div className="relative w-full h-screen bg-black overflow-hidden">
             <DashHeader/>
             <div className="relative flex w-full">
-                <Sidebar email={user?.email!}/>
+                <Sidebar user={user}/>
                 {children}
             </div>
         </div>
