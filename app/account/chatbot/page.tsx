@@ -2,7 +2,7 @@ import { createServerComponentClient } from "@supabase/auth-helpers-nextjs";
 import PageInfo from "../PageInfo";
 import { cookies } from 'next/headers'
 import { Database } from '../database.types'
-import Dashboard from "../Dashboard";
+import Dashboard from "./Dashboard";
 
 export default async function Page(){
     const supabase = createServerComponentClient<Database>({ cookies })
