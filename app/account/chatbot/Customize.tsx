@@ -1,5 +1,5 @@
 import { ChangeEvent, useState } from "react"
-import Switch from "react-switch";
+//import Switch from "react-switch";
 
 export default function Customize() {
     const [welcomeMessage, setWelcomeMessage] = useState<string>('Welcome to Chatfolio! Ask me any questions you may have about the site.');
@@ -30,7 +30,7 @@ export default function Customize() {
             </div>
             <div className="w-full flex flex-col gap-2">
                 <h1 className="text-gray-300 tracking-wider font-semibold">Remove Branding</h1>
-                <Switch disabled onChange={changeBranding} checked={removeBranding} checkedIcon={false} onColor="#3b82f6" uncheckedIcon={false} />
+                {/* <Switch disabled onChange={changeBranding} checked={removeBranding} checkedIcon={false} onColor="#3b82f6" uncheckedIcon={false} /> */}
             </div>
         </div>
     )
