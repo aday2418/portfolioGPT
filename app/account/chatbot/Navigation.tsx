@@ -4,6 +4,7 @@ import CurrentInfo from "@/components/CurrentInfo";
 import SubmitResume from "@/components/SubmitResume";
 import { useState } from "react";
 import NavigationButton from "./NavigationButton";
+import Customize from "./Customize";
 
 export default function Navigation({ wordLimit, info}: {wordLimit: number, info: string}) {
     const [section, setSection] = useState<string>('resume');
@@ -23,10 +24,7 @@ export default function Navigation({ wordLimit, info}: {wordLimit: number, info:
                     <SubmitResume wordLimit={wordLimit} />
                     <CurrentInfo currentInfo={info}/>
                 </div>
-            ) : (
-                <div className='relative w-full flex flex-col gap-10'>
-                </div>
-            )}
+            ) : <Customize/>}
         </div>
     )
 }

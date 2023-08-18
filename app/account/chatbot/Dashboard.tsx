@@ -1,5 +1,5 @@
 
-import Chatbot from '@/components/Chatbot'
+import Chatbot from './Chatbot'
 import CurrentInfo from '@/components/CurrentInfo'
 import SubmitResume from '@/components/SubmitResume'
 import { Session, createClientComponentClient, createServerComponentClient } from '@supabase/auth-helpers-nextjs'
@@ -18,7 +18,7 @@ export default function Dashboard({ session, profile }: { session: Session | nul
             <Navigation wordLimit={resume_words_limit} info={info} />
             <div className='relative flex flex-col gap-2'>
                 <ChatbotTitle/>
-                <Chatbot landingPage={true} defaultMessage={landingPageMessage} />
+                <Chatbot defaultMessage={landingPageMessage} />
             </div>
         </div>
     )
