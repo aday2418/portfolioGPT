@@ -8,16 +8,15 @@ export default async function Page(){
     const supabase = createServerComponentClient<Database>({ cookies })
     const {data: profiles} = await supabase.from('profiles').select(`
         info,
-        subscription_tier(*)
+        subscription_tier(*),
+        welcome_message,
+        chatbot_color,
+        remove_branding
     `)
-
-    const {
-      data: { session },
-    } = await supabase.auth.getSession()
     
     return(
         <PageInfo title="Chatbot Configuration"> 
-            <Dashboard session={session} profile={profiles?.[0]}/>
+            <Dashboard profile={profiles?.[0]}/>
         </PageInfo>
     )
 }

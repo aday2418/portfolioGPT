@@ -2,15 +2,17 @@ import fs from 'fs';
 import path from 'path';
 
 export default function getChatbot(key: string, userInfo: any) {
-    const { removeBranding } = userInfo;
+    const { info, subscription_tier, welcome_message, chatbot_color, remove_branding } = userInfo;
 
     const filePath = path.join(__dirname, '../../../../lib/chatbot.js');
     let script = fs.readFileSync(filePath, 'utf-8');
 
     // Define the parameters you want to insert
     const params = {
-        apiKey: key,
-        removeBranding
+        api_key: key,
+        welcome_message,
+        chatbot_color,
+        remove_branding
     };
     
     // Replace each placeholder with the corresponding value

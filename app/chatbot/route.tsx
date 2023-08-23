@@ -1,7 +1,6 @@
 import getChatbot from "@/lib/getChatbot";
-import getSubscriptionByUser from "@/lib/getSubscriptionByUser";
 import getSupabaseAdmin from "@/lib/getSupabaseAdmin";
-import getUserByApiKey from "@/lib/getUserByApiKey";
+import getUserByApiKey from "@/lib/getApiKey";
 import { NextRequest, NextResponse } from "next/server";
 
 export async function GET(req: NextRequest){

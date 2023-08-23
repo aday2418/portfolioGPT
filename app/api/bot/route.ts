@@ -1,8 +1,10 @@
 import callChatGpt from "@/lib/callChatGpt";
 import getSupabaseAdmin from "@/lib/getSupabaseAdmin";
-import getUserByApiKey from "@/lib/getUserByApiKey";
+import getApiKey from "@/lib/getApiKey";
+import logApiCall from "@/lib/logApiCall";
 import routeUser from "@/lib/routeUser";
 import { NextRequest, NextResponse } from "next/server";
+import validateApiCall from "@/lib/validateApiCall";
 
 export async function POST(req: NextRequest){
     const { messageHistory } = await req.json()
@@ -10,8 +12,19 @@ export async function POST(req: NextRequest){
 
     if(id) { 
         const supabase = getSupabaseAdmin();
-        const { info } = await getUserByApiKey(supabase, id)
-        const data = await callChatGpt(info || "", messageHistory)
-        return NextResponse.json({data})
+        const apiKey = await getApiKey(supabase, id);
+
+        const isValidCall = await validateApiCall(supabase, apiKey);
+        if (isValidCall) {
+            const data = await callChatGpt(apiKey.user_id.info || "", messageHistory)
+
+            // log event
+            logApiCall(supabase, apiKey);
+
+            return NextResponse.json({data})   
+        }
+        else {
+            return NextResponse.json({error: "Rate limit reached"}, {status: 429})
+        }
     }
 }
