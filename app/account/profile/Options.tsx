@@ -25,7 +25,7 @@ export default function Options({ stripeId }: {stripeId: string | null}) {
     }
 
     return (
-        <div className="flex gap-6 py-[20px]">
+        <div className="flex gap-6 py-[40px]">
             <Link href="/account/plans">
                 <button className="bg-blue-500 rounded-lg py-[5px] px-[10px] text-white font-semibold smoothe hover:bg-blue-600">Change</button>
             </Link>
