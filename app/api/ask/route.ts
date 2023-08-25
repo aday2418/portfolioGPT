@@ -8,6 +8,7 @@ export async function POST(req: NextRequest){
     const user = await routeUser() 
 
     const data = await callChatGpt(user.info, messageHistory)
+    console.log(data);
     
     return NextResponse.json({data})
 }

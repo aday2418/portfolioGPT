@@ -62,7 +62,7 @@ export default function Chatbot(){
     return(
         <div className="flex flex-col gap-[20px]">
             <div className={`relative w-[400px] h-[500px] bg-gray-200 rounded-md flex flex-col smoothe ${chatHidden ? "opacity-0" : "opacity-100"}`}>
-                <ChatHistory messageHistory={messageHistory} loading={loading}/>
+                <ChatHistory messageHistory={messageHistory} loading={loading} chatbotColor={chatbotColor} />
                 {!removeBranding && <div className="relative w-full p-[10px] flex justify-center">
                     <h1 className="w-fit font-medium text-gray-500 tracking-wide">
                         Powered by <a className="text-gray-600 underline" href="http://localhost:3000" target="_blank">Chatfolio</a>

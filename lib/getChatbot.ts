@@ -2,7 +2,7 @@ import fs from 'fs';
 import path from 'path';
 
 export default function getChatbot(key: string, userInfo: any) {
-    const { info, subscription_tier, welcome_message, chatbot_color, remove_branding } = userInfo;
+    const { user_id: {welcome_message, chatbot_color, remove_branding} } = userInfo;
 
     const filePath = path.join(__dirname, '../../../../lib/chatbot.js');
     let script = fs.readFileSync(filePath, 'utf-8');

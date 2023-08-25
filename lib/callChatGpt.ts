@@ -22,13 +22,13 @@ export default async function callChatGpt(info: string, messageHistory: MessageT
       }
     })
 
-    const systemMessage = landingPage ? "You are a helpful chatbot that delivers confident answers about chatfolio, a site that offers users a personalized chatbot for their portfolio website. Your answers are no longer than two sentences." : "You are a helpful chatbot that delivers confident answers about people's resumes. You only give answers, not cautions or warnings."
-
+    const systemMessage = landingPage ? `You will be provided with information about a business delimited by triple quotes. Answer any questions asked about this business in 3 sentences or less. Give helpful concise responses in your own  words, do not copy the information's words. If the question is not related to this business then simply write: "I'm sorry, I can only answer questions about Chatfolio". Whenever you are providing a list, write the response in bullet point format.` : `You will be provided with a somebody's career resume delimited by triple quotes. Answer any questions asked about this person's resume in 3rd person in 3 sentences or less. Give helpful concise responses in your own  words, do not copy the resume's words. If the question is not related to this person then simply write: "I'm sorry, I can only answer questions about this person's resume". Whenever you are providing a list, write the response in bullet point format.`
+  
     const completion = await openai.createChatCompletion({
         model: "gpt-3.5-turbo",
         messages: [
             {"role": "system", "content": systemMessage}, 
-            {"role": "user", "content": info},
+            {"role": "user", "content": `"${info}"`},
             ...structuredHistory
         ],
       });
