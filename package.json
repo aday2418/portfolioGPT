@@ -23,6 +23,7 @@
     "numeral": "^2.0.6",
     "openai": "^3.3.0",
     "postcss": "8.4.26",
+    "posthog-js": "^1.77.2",
     "react": "18.2.0",
     "react-chartjs-2": "^5.2.0",
     "react-code-blocks": "^0.1.3",

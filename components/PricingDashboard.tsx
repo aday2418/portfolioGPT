@@ -20,14 +20,13 @@ export default function PricingDashboard({ tier, stripeId, email, profileId }: {
             <Detail bulletPoint="2,000 messages /mo"/>
             <Detail bulletPoint="Resume size 1,000 words"/>
             <Detail bulletPoint="Remove Chatfolio Branding"/>
-            <Detail bulletPoint="Chatbot Personalities"/>
+            <Detail bulletPoint="Customize Chatbot"/>
           </TableDashboard>
           <TableDashboard title="Enthusiast" productId="1d1b458e-e00d-4b2a-b1d8-b7e2f71398dc" price="$19.99" selected={name == "Enthusiast"} upgrade={monthly_cost < 19.99} link={enthusiastLink} stripeId={stripeId} >
             <Detail bulletPoint="10,000 messages /mo"/>
             <Detail bulletPoint="Resume size 2,000 words"/>
             <Detail bulletPoint="Remove Chatfolio Branding"/>
-            <Detail bulletPoint="Chatbot Personalities"/>
-            <Detail bulletPoint="Custom Themes"/>
+            <Detail bulletPoint="Customize Chatbot"/>
           </TableDashboard>
         </div>
     )

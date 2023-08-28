@@ -5,6 +5,8 @@ import Table from "@/components/Table";
 import Detail from "@/components/Detail";
 import Pricing from "@/components/Pricing";
 import MainPageButton from "@/components/MainPageButton";
+import Panel from "./Panel";
+import FinalButton from "./FinalButton";
 
 export default function Home() {
   const landingPageMessage = "Welcome to Chatfolio! Ask me any questions you may have about the site."
@@ -29,11 +31,16 @@ export default function Home() {
         </div>
         <Scroll/>
       </div>
-      <div className="relative w-full h-screen flex flex-col bg-black">
-        <div className="relative flex py-[80px] justify-center">
-          <h1 className="text-white text-6xl tracking-wide font-semibold">Pricing</h1>
-        </div>
-        <Pricing/>
+      <div className="relative w-full h-screen flex flex-col items-center bg-blue-600 py-[80px] gap-32">
+        <div className="flex justify-center gap-14 items-center">
+          <Panel title="Upload Your Resume" step="upload" detail="Your chatbot can answer questions about your experience, skills, and background." />
+          <Panel title="Customize Your Chatbot" step="customize" detail="Customize the appearance of your chatbot to make it suit your website." />        
+          <Panel title="Upgrade Your Site" step="upgrade" detail="Elevate your site with an engaging chatbot, letting visitors learn more about you." />  
+        </div>  
+        <div className="flex flex-col gap-6 items-center">
+          <h1 className="text-3xl font-bold w-fit text-white">Get Started for Free</h1>
+          <FinalButton />
+        </div>            
       </div>
     </div>
   )
