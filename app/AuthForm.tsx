@@ -6,7 +6,8 @@ import { Database } from '../types/supabase'
 
 export default function AuthForm() {
   const supabase = createClientComponentClient<Database>()
-
+ 
+  
   return (
     <Auth
       supabaseClient={supabase}
