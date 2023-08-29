@@ -3,7 +3,7 @@ import HomeInfo from './HomeInfo'
 import PageInfo from './PageInfo'
 import { cookies } from 'next/headers'
 import { createServerComponentClient } from "@supabase/auth-helpers-nextjs";
-import { Database } from '../database.types'
+import { Database } from '../../types/supabase'
 import getMonthlyCalls from '@/lib/getMonthlyCalls';
 import Usage from './Usage';
 

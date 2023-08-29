@@ -1,5 +1,4 @@
 import { createClientComponentClient } from "@supabase/auth-helpers-nextjs"
-import { Database } from '../database.types'
 import { MessageType } from "@/types/MessageType"
 
 export default async function callChatbot(messageHistory: MessageType[], landingPage: boolean = false){

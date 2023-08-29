@@ -1,6 +1,5 @@
 'use client'
 import { ChangeEvent, useCallback, useEffect, useState } from 'react'
-import { Database } from '../database.types'
 import { Session, createClientComponentClient, createServerComponentClient } from '@supabase/auth-helpers-nextjs'
 import Chatbot from '@/components/Chatbot'
 import Error from 'next/error'

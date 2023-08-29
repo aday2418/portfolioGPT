@@ -2,7 +2,7 @@ import { createServerComponentClient } from "@supabase/auth-helpers-nextjs";
 import DashHeader from "./DashHeader";
 import Sidebar from "./Sidebar";
 import { cookies } from 'next/headers'
-import { Database } from '../database.types'
+import { Database } from '../../types/supabase'
 
 
 export default async function layout({children}: {children: React.ReactNode}){

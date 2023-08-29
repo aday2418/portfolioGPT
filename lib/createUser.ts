@@ -1,5 +1,5 @@
 import { createClientComponentClient } from "@supabase/auth-helpers-nextjs"
-import { Database } from '../database.types'
+import { Database } from '../types/supabase'
 
 export default async function createUser(email: string, password: string) {
     const supabase = createClientComponentClient<Database>()

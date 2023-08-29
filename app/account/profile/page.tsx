@@ -1,6 +1,6 @@
 import { createServerComponentClient } from "@supabase/auth-helpers-nextjs";
 import PageInfo from "../PageInfo";
-import { Database } from '../database.types'
+import { Database } from '../../../types/supabase'
 import { cookies } from 'next/headers'
 import formatDollar from "@/lib/formatDollar";
 import Link from "next/link";

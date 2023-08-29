@@ -2,7 +2,7 @@ import Pricing from "@/components/Pricing";
 import PageInfo from "../PageInfo";
 import { cookies } from 'next/headers'
 import { createServerComponentClient } from "@supabase/auth-helpers-nextjs";
-import { Database } from '../database.types'
+import { Database } from '../../../types/supabase'
 import PricingDashboard from "@/components/PricingDashboard";
 
 export default async function Page(){

@@ -1,8 +1,7 @@
 import { createServerComponentClient } from "@supabase/auth-helpers-nextjs";
 import PageInfo from "../PageInfo";
 import { cookies } from 'next/headers'
-import { Database } from '../database.types'
-import { useState } from "react";
+import { Database } from '../../../types/supabase'
 import ApiKeyField from "./ApiKeyField";
 import CodeSnippet from "./CodeSnippet";
 
